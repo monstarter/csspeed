@@ -1,0 +1,34 @@
+.message {
+	padding: 0 1em;
+	border: 1px solid transparent;
+	margin: 1em 0px;
+    border-radius: 4px;
+
+	// Info
+	&.is--info {
+        color: darken(@info, 20%);
+        background-color: lighten(@info, 37%);
+        border-color: lighten(@info, 30%);
+	}
+
+	// Success
+	&.is--success {
+		color: darken(@success, 20%);
+        background-color: lighten(@success, 37%);
+        border-color: lighten(@success, 30%);
+	}
+
+	// Warning
+	&.is--warning {
+        color: darken(@warning, 20%);
+        background-color: lighten(@warning, 37%);
+        border-color: lighten(@warning, 30%);
+	}
+
+	// Error
+	&.is--danger {
+        color: darken(@danger, 20%);
+        background-color: lighten(@danger, 37%);
+        border-color: lighten(@danger, 30%);
+	}
+}

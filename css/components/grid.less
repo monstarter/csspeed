@@ -1,0 +1,88 @@
+/*==============================================*\
+	# GRID SYSTEM
+\*==============================================*/
+
+// Total columns in the grid
+@columns: 12;
+
+
+columns {
+	display: flex;
+  	margin-left: -5px;
+  	margin-right: -5px;
+  	margin-top: -5px;
+
+  	// Modifiers
+  	&.is--center {
+    	justify-content: center;
+	}
+
+  	&.is--collapsed {
+	    margin-left: 0;
+	    margin-right: 0;
+	    margin-top: 0;
+	}
+
+    &:last-child {
+      	margin-bottom: 0;
+	}
+
+    &:not(:last-child) {
+      	margin-bottom: 5px;
+	}
+
+}
+
+column {
+  	-webkit-box-flex: 1;
+  	-webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding: 5px;
+
+	// Mobile columns
+	.for( @columns ); .each( @column ) {
+		&.mobile--@{column} {
+			width: ( @column / @columns * 100% );
+			-webkit-box-flex: 0;
+		    -webkit-flex: none;
+		    -ms-flex: none;
+		    flex: none;
+		}
+		&.mobile--@{column}.offset {
+			margin-left: 100% - ( @column / @columns ) * 100%;
+		}
+	}
+
+	// Tablet columns
+	@media @tablet {
+		.for( @columns ); .each( @column ) {
+			&.tablet--@{column} {
+				width: ( @column / @columns * 100% );
+				-webkit-box-flex: 0;
+			    -webkit-flex: none;
+			    -ms-flex: none;
+			    flex: none;
+			}
+			&.tablet--@{column}.offset {
+				margin-left: 100% - ( @column / @columns ) * 100%;
+			}
+		}
+	}
+
+	// Desktop columns
+	@media @desktop {
+		.for( @columns ); .each( @column ) {
+			&.desktop--@{column} {
+				width: ( @column / @columns * 100% );
+				-webkit-box-flex: 0;
+			    -webkit-flex: none;
+			    -ms-flex: none;
+			    flex: none;
+			}
+			&.desktop--@{column}.offset {
+				margin-left: 100% - ( @column / @columns ) * 100%;
+			}
+		}
+	}
+}

@@ -1,0 +1,53 @@
+.table-container {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 14px 0px;
+    overflow: auto;
+
+    td,
+    th {
+        border: 1px solid #e5e5e5;
+        font-size: inherit;
+        margin: 0;
+        padding: 1em;
+    }
+
+    tbody tr:nth-child(odd){
+        background: #fafafa;
+    }
+
+    thead {
+        border-bottom: 2px solid @primary;
+        text-align: left;
+        vertical-align: bottom;
+        font-weight: bold;
+    }
+
+    /* TABLE VERTICAL BORDERED */
+    &.is--cols td,
+    &.is--cols th {
+        border-width: 0 0 0 1px;
+
+        >tr:last-child > td {
+            border-bottom-width: 0;
+        }
+    }
+
+
+    /* TABLE HORIZONTAL BORDER */
+    &.is--rows td,
+    &.is--rows th {
+        border-width: 0 0 1px 0;
+
+        > tr:last-child > td {
+            border-bottom-width: 0;
+        }
+    }
+
+
+}
