@@ -17,8 +17,8 @@
         <p>usa <b>message is--danger</b> para mostrar un mensaje de error</p>
     </div>
 
-    <pre rel="HTML" data-src="images.html" class="language-markup">
-        <code class="language-markup">
+    <pre>
+        <code class="css hljs">
             &lt;div class=&quot;message is--info&quot;&gt;
                 &lt;p&gt;Usa message is--info para indicar información adicional&lt;/p&gt;
             &lt;/div&gt;

@@ -1,34 +1,61 @@
-.message {
-	padding: 0 1em;
-	border: 1px solid transparent;
-	margin: 1em 0px;
-    border-radius: 4px;
+// main: ../styles.less
 
-	// Info
-	&.is--info {
+
+
+/*  M E S S A G E
+------------------------------------------------------------------ */
+.message {
+    padding: 0 1em;
+    border: 1px solid transparent;
+    margin: 1em 0px 2em 0px;
+    font-weight: 400;
+    position: relative;
+
+    &:after {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        margin: auto;
+        left: 50%;
+        right: 50%;
+        bottom: -12px;
+        border-right: 1px solid transparent;
+        border-bottom: 1px solid transparent;
+        .rotate(45deg);
+    }
+
+    //  MODIFIERS
+    &.is--info, &.is--info:after {
         color: darken(@info, 20%);
         background-color: lighten(@info, 37%);
         border-color: lighten(@info, 30%);
-	}
+    }
 
-	// Success
-	&.is--success {
-		color: darken(@success, 20%);
+    &.is--success, &.is--success:after {
+        color: darken(@success, 20%);
         background-color: lighten(@success, 37%);
         border-color: lighten(@success, 30%);
-	}
+    }
 
-	// Warning
-	&.is--warning {
+    &.is--warning, &.is--warning:after {
         color: darken(@warning, 20%);
         background-color: lighten(@warning, 37%);
         border-color: lighten(@warning, 30%);
-	}
+    }
 
-	// Error
-	&.is--danger {
+    &.is--danger, &.is--danger:after {
         color: darken(@danger, 20%);
         background-color: lighten(@danger, 37%);
         border-color: lighten(@danger, 30%);
-	}
+    }
+
+    &.is--rounded {
+        border-radius: 5px;
+    }
+
+    &.is--circle {
+        border-radius: 50px;
+    }
 }

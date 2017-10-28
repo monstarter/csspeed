@@ -13,31 +13,31 @@
 <div class="milli">Texto .milli</div>
 <div class="micro">Texto .micro</div>
 
-<pre rel="HTML" data-src="images.html" class="language-markup">
-    <code class="language-markup">
-		&lt;div class=&quot;giga&quot;&gt;Texto .giga&lt;/div&gt;
-		&lt;div class=&quot;mega&quot;&gt;Texto .mega&lt;/div&gt;
-		&lt;div class=&quot;kilo&quot;&gt;Texto .kilo&lt;/div&gt;
-		<br>
-		&lt;h1&gt;Texto h1&lt;/h1&gt;
-		&lt;h2&gt;Texto h2&lt;/h2&gt;
-		&lt;h3&gt;Texto h3&lt;/h3&gt;
-		&lt;h4&gt;Texto h4&lt;/h4&gt;
-		&lt;h5&gt;Texto h5&lt;/h5&gt;
-		<br>
-		&lt;div class=&quot;milli&quot;&gt;Texto .milli&lt;/div&gt;
-		&lt;div class=&quot;micro&quot;&gt;Texto .micro&lt;/div&gt;
-    </code>
+<pre>
+<code class="html hljs">
+&lt;div class=&quot;giga&quot;&gt;Texto .giga&lt;/div&gt;
+&lt;div class=&quot;mega&quot;&gt;Texto .mega&lt;/div&gt;
+&lt;div class=&quot;kilo&quot;&gt;Texto .kilo&lt;/div&gt;
+<br>
+&lt;h1&gt;Texto h1&lt;/h1&gt;
+&lt;h2&gt;Texto h2&lt;/h2&gt;
+&lt;h3&gt;Texto h3&lt;/h3&gt;
+&lt;h4&gt;Texto h4&lt;/h4&gt;
+&lt;h5&gt;Texto h5&lt;/h5&gt;
+<br>
+&lt;div class=&quot;milli&quot;&gt;Texto .milli&lt;/div&gt;
+&lt;div class=&quot;micro&quot;&gt;Texto .micro&lt;/div&gt;
+</code>
 </pre>
 
 <hr>
 
 <h3>Parrafos</h3>
 <p>Este es un ejemplo de un párrafo, los párrafos deben estar dentro de la etiqueta <b>&lt;p&gt;</b>,los párrafos por defecto tienen un <b>font-size de 14px</b> el cual está definido para todos los elementos de <b>&lt;body&gt;.</b></p>
-<pre rel="HTML" data-src="images.html" class="language-markup">
-    <code class="language-markup">
-		&lt;p&gt;Este es un ejemplo de parrafo muy corto.&lt;/p&gt;
-    </code>
+<pre>
+<code class="html hljs">
+&lt;p&gt;Este es un ejemplo de parrafo muy corto.&lt;/p&gt;
+</code>
 </pre>
 
 <hr>
@@ -48,11 +48,11 @@
 	<small>Autor Desconocido</small>
 </blockquote>
 
-<pre rel="HTML" data-src="images.html" class="language-markup">
-    <code class="language-markup">
-		&lt;blockquote&gt;
-			&lt;p&gt;Los blockquote son usados para "citar" texto, tal como este ejemplo.&lt;/p&gt;
-			&lt;small&gt;Autor Desconocido&lt;/small&gt;
-		&lt;/blockquote&gt;
-    </code>
+<pre>
+<code class="html hljs">
+&lt;blockquote&gt;
+	&lt;p&gt;Los blockquote son usados para "citar" texto.&lt;/p&gt;
+	&lt;small&gt;Autor Desconocido&lt;/small&gt;
+&lt;/blockquote&gt;
+</code>
 </pre>

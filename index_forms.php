@@ -199,7 +199,7 @@
             </div>
 
             <pre>
-                <code>
+                <code class="html hljs">
                     <span>
                         &lt;div&gt;
                         <span>&lt;p&gt;Puedado puede que algo malo&lt;/p&gt;</span>

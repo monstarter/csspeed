@@ -2,100 +2,95 @@
 <html>
 
     <head>
-        <title>CSSpeed</title>
         <?php include('includes/head.php') ?>
     </head>
 
     <body>
 
-        <!-- Header  -->
+        <!-- H E A D E R  -->
         <header>
             <?php include('includes/header.php') ?>
         </header>
 
 
-        <!-- Main -->
+        <!-- M A I N -->
         <main>
+
+            <!-- ASIDE -->
+            <aside>
+                <?php include('includes/aside.php') ?>
+            </aside>
+
+            <!-- CONTENT -->
+
             <div class="container">
-                <!-- ASIDE -->
-                <aside>
-                    <?php include('includes/aside.php') ?>
-                </aside>
+                <div class="content">
+                    <!-- Core -->
+                    <section>
+                        <?php include('core.php') ?>
+                    </section>
 
-                <columns>
-                    <column class="mobile--12 tablet--12 desktop--10 widescreen--10 offset">
-                        <div class="content">
-                            <!-- Core -->
-                            <section>
-                                <?php include('core.php') ?>
-                            </section>
+                    <hr>
 
-                            <hr>
+                    <!-- Base -->
+                    <section>
+                        <?php include('base.php') ?>
+                    </section>
 
-                            <!-- Base -->
-                            <section>
-                                <?php include('base.php') ?>
-                            </section>
+                    <hr>
 
-                            <hr>
+                    <!-- Grid system -->
+                    <section>
+                        <?php include('grid.php') ?>
+                    </section>
 
-                            <!-- Grid system -->
-                            <section>
-                                <?php include('grid.php') ?>
-                            </section>
+                    <hr>
 
-                            <hr>
+                    <!-- Lists -->
+                    <section>
+                        <?php include('lists.php') ?>
+                    </section>
 
-                            <!-- Lists -->
-                            <section>
-                                <?php include('lists.php') ?>
-                            </section>
+                    <hr>
 
-                            <hr>
+                    <!-- Images -->
+                    <section>
+                        <?php include('images.php') ?>
+                    </section>
 
-                            <!-- Images -->
-                            <section>
-                                <?php include('images.php') ?>
-                            </section>
+                    <hr>
 
-                            <hr>
+                    <!-- Buttons -->
+                    <section>
+                        <?php include('buttons.php') ?>
+                    </section>
 
-                            <!-- Buttons -->
-                            <section>
-                                <?php include('buttons.php') ?>
-                            </section>
+                    <hr>
 
-                            <hr>
+                    <!-- Forms -->
+                    <section>
+                        <?php include('forms.php') ?>
+                    </section>
 
-                            <!-- Forms -->
-                            <section>
-                                <?php include('forms.php') ?>
-                            </section>
+                    <hr>
 
-                            <hr>
+                    <!-- Message -->
+                    <section>
+                        <?php include('messages.php') ?>
+                    </section>
 
-                            <!-- Message -->
-                            <section>
-                                <?php include('messages.php') ?>
-                            </section>
-
-                            <!-- Ligthbox -->
-                            <section>
-                                <?php include('ligthbox.php') ?>
-                            </section>
-                        </div>
-                    </column>
-                </row>
+                    <!-- Ligthbox -->
+                    <section>
+                        <?php include('ligthbox.php') ?>
+                    </section>
+                </div>
             </div>
         </main>
 
 
-        <!-- Footer -->
+        <!-- F O O T E R -->
         <footer>
             <?php include('includes/footer.php') ?>
         </footer>
-
-        <script type="text/javascript" src="js/prism.js"></script>
     </body>
-
 </html>

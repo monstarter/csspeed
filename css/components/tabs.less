@@ -1,0 +1,42 @@
+// main: ../styles.less
+
+
+
+/*  T A B S
+------------------------------------------------------------------ */
+.tabs{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    border-bottom: 1px solid #eee;
+
+    li{
+        background: none;
+        display: inline-block;
+        padding: 10px;
+        cursor: pointer;
+        color: #333;
+        font-weight: 600;
+        text-transform: uppercase;
+        .transition;
+
+        &.current{
+            box-shadow: 0px 3px 0px @primary;
+            color: @primary;
+        }
+
+        &:hover {
+            box-shadow: 0px 3px 0px #ccc;
+            color: @primary;
+        }
+    }
+}
+
+.tab-content{
+    padding: 15px 30px;
+    display: none;
+    
+    &.current{
+        display: inherit;
+    }
+}

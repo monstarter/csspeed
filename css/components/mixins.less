@@ -1,37 +1,53 @@
-// A N I M A T I O N S
+// main: ../styles.less
 
-// Transitions
-.transition(@time:0.2s) {
-	webkit-transition:  @time ease-out;    // Safari 3.2+, Chrome
-	-moz-transition:    @time ease-out;    // Firefox 4.0+
+
+
+/*  M I X I N S
+------------------------------------------------------------------ */
+
+//  T R A N S I T I O N S
+.transition (@time:0.2s) {
+    webkit-transition:  @time ease-out;    // Safari 3.2+, Chrome
+    -moz-transition:    @time ease-out;    // Firefox 4.0+
     -ms-transform:      @time ease-out;    // Internet Explorer 9
-	-o-transition:      @time ease-out;    // Opera 10.5+
-	transition:         @time ease-out;    // All
+    -o-transition:      @time ease-out;    // Opera 10.5+
+    transition:         @time ease-out;    // All
 }
 
-// Translate
+
+//  T R A N S L A T E
 .translate (@x:0, @y:0) {
-	-webkit-transform:   translate(@x, @y);    // Safari 3.2+, Chrome
-	-moz-transform: 	 translate(@x, @y);    // Firefox 4.0+
-	-ms-transform: 		 translate(@x, @y);    // Internet Explorer 9
-	-o-transform: 		 translate(@x, @y);    // Opera 10.5+
+    -webkit-transform:   translate(@x, @y);    // Safari 3.2+, Chrome
+    -moz-transform:      translate(@x, @y);    // Firefox 4.0+
+    -ms-transform:       translate(@x, @y);    // Internet Explorer 9
+    -o-transform:        translate(@x, @y);    // Opera 10.5+
     transform:           translate(@x, @y);    // All
 }
 
-// Scale
-.scale (@x:1) {
-	-webkit-transform: 	scale(@x);		// Safari 3.2+, Chrome
-	-moz-transform: 	scale(@x);		// Firefox 4.0+
-	-ms-transform: 		scale(@x);		// Internet Explorer 9
-	-o-transform: 		scale(@x);		// Opera 10.5+
-	transform: 			scale(@x);		// All
+
+//  S C A L E
+.scale (@x:1, @y:1) {
+    -webkit-transform:  scale(@x, @y);      // Safari 3.2+, Chrome
+    -moz-transform:     scale(@x, @y);      // Firefox 4.0+
+    -ms-transform:      scale(@x, @y);      // Internet Explorer 9
+    -o-transform:       scale(@x, @y);      // Opera 10.5+
+    transform:          scale(@x, @y);      // All
 }
 
 
+//  R O T A T E
+.rotate (@x:0) {
+    -ms-transform:      rotate(@x);       // Internet Explorer 9
+    -webkit-transform:  rotate(@x);       // Safari 3.2+, Chrome
+    transform:          rotate(@x);       // All
+}
 
-// Clear default apareance
+
+//  A P P E A R A N C E   N O N E
 .appearance-none {
     -webkit-appearance: none;
     -moz-appearance:    none;
     appearance:         none;
 }
+
+

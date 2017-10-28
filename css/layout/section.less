@@ -1,0 +1,44 @@
+// main: ../styles.less
+
+
+
+/*  S E C T I O N
+------------------------------------------------------------------ */
+.section {
+    padding: 40px;
+
+
+
+    // M O D I F I E R S
+
+    // Is Medium
+    &.is--medium {
+        padding: 120px 0;
+    }
+
+    // Is Large
+    &.is--large {
+        padding: 240px 0;
+    }
+
+    // Is Fullheight
+    &.is--fullheight {
+        min-height: 100vh;
+    }
+
+
+
+    // Is Primary
+    &.is--primary {
+        background: @primary;
+        color: #fff;
+        a {
+            color: @primary-invert;
+        }
+    }
+
+    // Is Light
+    &.is--light {
+        background: @light;
+    }
+}

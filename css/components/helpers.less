@@ -1,46 +1,29 @@
-/* Alinear texto aa la izquierda */
-.left {
+// main: ../styles.less
+
+
+
+/*  H E L P E R S
+------------------------------------------------------------------ */
+
+//  T E X T   A L I G N
+.text-left {
 	text-align: left;
 }
 
-/* Alinear texto a la derecha */
-.right {
+.text-right {
 	text-align: right;
 }
 
-/* Alinear texto al centro */
-.center {
+.text-center {
 	text-align: center;
 }
 
-/* Flotar a la izquierda */
-.float-left {
-	float: left;
+.text-justify {
+	text-align: justify;
 }
 
-/* Flotar a la derecha */
-.float-right {
-	float: right;
-}
 
-/* Alinear verticalmente */
-.valign-container {
-	display: -webkit-box;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
-	-webkit-flex-align: center;
-	-ms-flex-align: center;
-	-webkit-align-items: center;
-	align-items: center;
-	}
-
-	.valign { display: block; }
-
-
-
-/* Separadores */
+//  S E P A R A T O R
 .separator {
 	width: 100%;
 	height: 1px;
@@ -49,8 +32,7 @@
 }
 
 
-
-/* Lineas de división*/
+//  L I N E
 .line {
 	border-top: 1px solid #ccc;
 	clear: both;
@@ -58,18 +40,17 @@
 	height: 1px;
 	margin: 20px 0px;
 	width: 100%;
-}
-	/* Linea con guiones */
-	.line.--dashed {
+
+	//  MODIFIERS
+	&.is--dashed {
 		border-top: 1px dashed #ccc;
 	}
 
-	/* Linea punteada */
-	.line.--dotted {
+	&.is--dotted {
 		border-top: 1px dotted #ccc;
 	}
 
-	/* Linea doble */
-	.line.--double {
+	&.is--double {
 		border-top: 1px double #ccc;
 	}
+}

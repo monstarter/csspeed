@@ -1,43 +1,44 @@
+// main: ../styles.less
+
+
+
+/*  T H E M E  -  M Y   T H E M E   N A M E
+------------------------------------------------------------------ */
+h3, h4 {
+    margin-top: 50px;
+}
+
 aside {
+    width: 300px;
+    height: 100vh;
+    border-right: 1px solid #e5e5e5;
     position: fixed;
-    float: left;
-    padding-top: 50px;
-    width: 200px;
-    z-index: 999;
-    text-align: right;
+    top: 0px;
+    left: 0px;
+    padding: 45px;
 
     .logo {
-        margin-bottom: 20px;
-        width: 80px;
-        display: inline-block;
+        margin-top: 40px;
     }
 }
 
-
-section {
-	padding: 90px 0px;
-}
-
-.grid-example {
-	column {
-		> div {
-			padding: 5px;
-			text-align: center;
-			background: #eee;
-		}
-	}
-}
-
 .container {
-	width: 100%;
-	max-width: 1200px;
-	margin: auto;
+    width: 100%;
+    text-align: center;
 
-	.content {
-		width: auto;
-		padding-left: 60px;
-		margin-left: 60px;
-		border-left: 1px solid #E0E0E0;
-		padding-top: 40px;
-	}
+    .content {
+        max-width: 680px;
+        text-align: left;
+        padding: 70px 0;
+        display: inline-block;
+
+        column {
+            div {
+                background: @primary;
+                color: @primary-invert;
+                padding: 12px 16px;
+                font-weight: 700;
+            }
+        }
+    }
 }

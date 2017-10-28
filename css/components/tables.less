@@ -1,3 +1,9 @@
+// main: ../styles.less
+
+
+
+/*  T A B L E S
+------------------------------------------------------------------ */
 .table-container {
     overflow-x: auto;
 }
@@ -14,18 +20,15 @@
         border: 1px solid #e5e5e5;
         font-size: inherit;
         margin: 0;
-        padding: 1em;
-    }
-
-    tbody tr:nth-child(odd){
-        background: #fafafa;
+        padding: 12px;
     }
 
     thead {
-        border-bottom: 2px solid @primary;
-        text-align: left;
         vertical-align: bottom;
         font-weight: bold;
+        text-transform: uppercase;
+        color: #666;
+        font-size: 12px;
     }
 
     /* TABLE VERTICAL BORDERED */
@@ -49,5 +52,11 @@
         }
     }
 
-
+    &.is--rows {
+        tbody {
+            tr:last-child > td {
+                border-bottom-width: 0;
+            }
+        }
+    }
 }

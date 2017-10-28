@@ -2,7 +2,7 @@
 	<img src="img/logo_fubble_css.png">
 </div>
 
-<nav class="nav--lines">
+<nav class="is--vertical">
 	<ul>
 		<li><a href="">Core</a></li>
 		<li><a href="">Base</a></li>

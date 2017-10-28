@@ -1,104 +1,44 @@
-/*==============================================*\
-    # B R E A K P O I N T S   S I Z E S
-\*==============================================*/
-@widescreen:  ~"screen and (min-width: 1180px)";
-@desktop:   ~"screen and (min-width: 968px)";
-@tablet:  ~"screen and (min-width: 769px)";
-@mobile:   ~"screen and (max-width: 768px)";
-
-@desktop-only:  ~"screen and (min-width: 769px) and (max-width: 1179px)";
-@tablet-only:  ~"screen and (min-width: 769px) and (max-width: 979px)";
-
-/*==============================================*\
-    # C O L O R   P A L E T E
-\*==============================================*/
-@primary: #00b0ff;
-@secondary: #5b5b5b;
-
-@info: #42AFE3;
-@success: #8BC34A;
-@warning: #FFC107;
-@danger: #F44336;
+// main: ../styles.less
 
 
-/*==============================================*\
-    # B A S E
-\*==============================================*/
+
+/*  B R E A K P O I N T S
+------------------------------------------------------------------ */
+@desktop:   ~"screen and (min-width: 961px)";
+@tablet:    ~"screen and (min-width: 641px) and (max-width: 960px)";
+@mobile:    ~"screen and (max-width: 640px)";
+@tablet-lt: ~"screen and (max-width: 960px)";
+
+
+
+/*  C O L O R S
+------------------------------------------------------------------ */
+@primary:            #00b0ff;
+@primary-invert:     #fff;
+@secondary:          #333;
+@secondary-invert:   #fff;
+@light:              #f5f7fa;
+@dark:               #505458;
+@info:               #42AFE3;
+@success:            #8BC34A;
+@warning:            #FFC107;
+@danger:             #F44336;
+@text:               #777;
+
+
+
+/*  G L O B A L   S T Y L E S
+------------------------------------------------------------------ */
 html,
 body {
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    color: #666;
-    background: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: @text;
     line-height: 1.75;
-    font-weight: 300;
-}
-
-.giga {
-    color: #333;
-    font-weight: 500;
-    font-size: 6rem;
-}
-
-.mega {
-    color: #333;
-    font-weight: 500;
-    font-size: 4.5rem;
-}
-
-.kilo {
-    color: #333;
-    font-weight: 500;
-    font-size: 3rem;
-}
-
-h1 {
-    font-weight: 500;
-    color: #333;
-    font-size: 2.25rem;
+    font-weight: 400;
 }
 
 
-h2 {
-    font-weight: 500;
-    color: #333;
-    font-size: 1.875rem;
-}
-
-
-h3 {
-    font-weight: 500;
-    color: #333;
-    font-size: 1.5rem;
-}
-
-
-h4 {
-    font-weight: 500;
-    color: #333;
-    font-size: 1.25rem;
-}
-
-
-h5 {
-    font-weight: 500;
-    color: #333;
-    font-size: 1rem;
-}
-
-.milli {
-    font-weight: 500;
-    font-size: 0.75rem;
-}
-
-.micro {
-    font-weight: 500;
-    font-size: 0.625rem;
-}
-
-/*==============================================*\
-    # G L O B A L
-\*==============================================*/
 a {
     color: @primary;
     text-decoration: none;
@@ -116,7 +56,7 @@ p {
 
 
 strong, b {
-    font-weight: 500;
+    font-weight: 700;
 }
 
 
@@ -132,7 +72,7 @@ img {
 hr {
     box-sizing: content-box;
     height: 0;
-    margin: 25px 0;
+    margin: 50px 0;
     border: 0;
     border-top: 1px solid #e5e5e5;
 }
@@ -144,11 +84,8 @@ blockquote {
     font-size: 16px;
     line-height: 22px;
     font-style: italic;
+    margin-bottom: 20px;
 }
-
-
-small { font-size: 14px; color: #999; }
-
 
 ul,
 ol {
@@ -156,23 +93,57 @@ ol {
 }
 
 
-/*==============================================*\
-    # C O N T A I N E R
-\*==============================================*/
-.container {
-    position: relative;
 
-    &.is--fluid {
-        margin: 0 20px;
-        max-width: none;
-    }
+/*  S I Z E S
+------------------------------------------------------------------ */
+.giga {
+    color: #333;
+    font-size: 6rem;
+}
 
-    @media @tablet {
-        margin: 0 auto;
-        max-width: 960px;
-    }
+.mega {
+    color: #333;
+    font-size: 4.5rem;
+}
 
-    @media @widescreen {
-        max-width: 1200px;
-    }
+.kilo {
+    color: #333;
+    font-size: 3rem;
+}
+
+h1 {
+    color: #333;
+    font-size: 2.25rem;
+}
+
+
+h2 {
+    color: #333;
+    font-size: 1.875rem;
+}
+
+
+h3 {
+    color: #333;
+    font-size: 1.5rem;
+}
+
+
+h4 {
+    color: #333;
+    font-size: 1.25rem;
+}
+
+
+h5 {
+    color: #333;
+    font-size: 1rem;
+}
+
+.milli {
+    font-size: 0.875rem;
+}
+
+.micro {
+    font-size: 0.625rem;
 }

@@ -1,111 +1,158 @@
+// main: ../styles.less
+
+
+
+/*  B U T T O N S
+------------------------------------------------------------------ */
 button {
     display: inline-block;
     vertical-align: middle;
     white-space: nowrap;
     font-family: inherit;
     font-size: 100%;
-    font-weight: 300;
+    font-weight: 400;
     cursor: pointer;
     border: none;
     margin: 0;
-    padding: 0 2em;
+    padding: 0 1.5em;
     line-height: 3;
+    letter-spacing: 2px;
     color: #333;
     background-color: transparent;
     border: 1px solid #ccc;
+    text-transform: uppercase;
     .transition;
 
+    //  ICONS
     icon {
+        //  Icon first
+        &:first-child {
+            margin-left: 0;
+        }
+
+        //  Icon last
+        &:last-child {
+            margin-right: 0;
+        }
+
         margin-top: -2px;
     }
 
-    // Icons inside button
-    icon:first-child {
-        margin-left: 0;
-    }
-
-    icon:last-child {
-        margin-right: 0;
-    }
 
 
+    //  MODIFIERS -- STYLE
 
-    // M O D I F I E R S
-
-    // Primary
+    //  Primary
     &.is--primary {
         background-color: @primary;
         border-color: @primary;
-        color: #fff;
+        color: @primary-invert;
 
-        // Primary Outline
+        &:hover {
+            background-color: lighten(@primary, 10%);
+            border-color: lighten(@primary, 10%);
+        }
+
+        //  Primary outline
         &.is--outline {
             background-color: transparent;
             color: @primary;
 
             &:hover {
-                color: #fff;
+                color: @primary-invert;
                 background-color: @primary;
             }
         }
-
-        // Primary Link
-        &.is--link {
-            background-color: transparent;
+        
+        //  Primary invert
+        &.is--invert {
+            background-color: @primary-invert;
             color: @primary;
-            border: none;
+            border-color: @primary;
 
             &:hover {
-                text-decoration: underline;
+                background-color: @primary-invert;
+                color: @primary;
+                border-color: @primary;
+                box-shadow: 0 2px 12px rgba(0,0,0,.4);
             }
+
         }
 
-        &:hover {
-            background-color: lighten(@primary, 10%);
+        //  Primary link
+        &.is--link {
+            color: @primary;
         }
     }
 
-    // Secondary
+
+    //  Secondary
     &.is--secondary {
         background-color: @secondary;
         border-color: @secondary;
-        color: #fff;
+        color: @secondary-invert;
 
-        // Secondary Outline
+        //  Secondary outline
         &.is--outline {
             background-color: transparent;
             color: @secondary;
 
             &:hover {
-                color: #fff;
+                color: @secondary-invert;
                 background-color: @secondary;
             }
         }
 
-        // Secondary Link
+        //  Secondary link
         &.is--link {
-            background-color: transparent;
             color: @secondary;
-            border: none;
-
-            &:hover {
-                text-decoration: underline;
-            }
         }
 
         &:hover {
             background-color: lighten(@secondary, 10%);
+            border-color: lighten(@secondary, 10%);
         }
     }
 
 
-    // Info
+
+    //  Light
+    &.is--light {
+        background-color: @light;
+        border-color: @primary-invert;
+        color: @primary;
+
+        //  Light outline
+        &.is--outline {
+            background-color: transparent;
+            color: @primary;
+
+            &:hover {
+                color: @primary;
+                background-color: @primary;
+            }
+        }
+
+        //  Light link
+        &.is--link {
+            border: none;
+        }
+
+        &:hover {
+            color: @primary;
+            background-color: #fff;
+        }
+    }
+
+
+
+    //  Info
     &.is--info {
         background-color: @info;
         border-color: @info;
         color: #fff;
 
-        // Info Outline
+        //  Info outline
         &.is--outline {
             background-color: transparent;
             color: @info;
@@ -116,29 +163,24 @@ button {
             }
         }
 
-        // Info Link
+        //  Info link
         &.is--link {
-            background-color: transparent;
-            color: @info;
             border: none;
-
-            &:hover {
-                text-decoration: underline;
-            }
         }
 
         &:hover {
             background-color: lighten(@info, 10%);
+            border-color: lighten(@info, 10%);
         }
     }
 
-    // Success
+    //  Success
     &.is--success {
         background-color: @success;
         border-color: @success;
         color: #fff;
 
-        // Success Outline
+        //  Success outline
         &.is--outline {
             background-color: transparent;
             color: @success;
@@ -149,29 +191,24 @@ button {
             }
         }
 
-        // Success Link
+        //  Success link
         &.is--link {
-            background-color: transparent;
-            color: @success;
             border: none;
-
-            &:hover {
-                text-decoration: underline;
-            }
         }
 
         &:hover {
             background-color: lighten(@success, 10%);
+            border-color: lighten(@success, 10%);
         }
     }
 
-    // Warning
+    //  Warning
     &.is--warning {
         background-color: @warning;
         border-color: @warning;
         color: #fff;
 
-        // Warning Outline
+        //  Warning outline
         &.is--outline {
             background-color: transparent;
             color: @warning;
@@ -182,29 +219,24 @@ button {
             }
         }
 
-        // Warning Link
+        //  Warning link
         &.is--link {
-            background-color: transparent;
-            color: @warning;
             border: none;
-
-            &:hover {
-                text-decoration: underline;
-            }
         }
 
         &:hover {
             background-color: lighten(@warning, 10%);
+            border-color: lighten(@warning, 10%);
         }
     }
 
-    // Danger
+    //  Danger
     &.is--danger {
         background-color: @danger;
         border-color: @danger;
         color: #fff;
 
-        // Danger Outline
+        //  Danger outline
         &.is--outline {
             background-color: transparent;
             color: @danger;
@@ -215,48 +247,44 @@ button {
             }
         }
 
-        // Danger Link
+        //  Danger link
         &.is--link {
-            background-color: transparent;
-            color: @danger;
             border: none;
-
-            &:hover {
-                text-decoration: underline;
-            }
         }
 
         &:hover {
             background-color: lighten(@danger, 10%);
+            border-color: lighten(@danger, 10%);
         }
     }
 
 
 
-    // G L O B A L   M O D I F I E R S
-    // Disabled
+    //  MODIFIERS -- GLOBALS
+    
+    //  Disabled
     &.is--disabled {
         opacity: 0.4;
         pointer-events: none;
     }
 
 
-    // Is Small
+    //  Small size
     &.is--small {
         font-size: 0.75rem;
     }
 
-    // Is Medium
+    //  Medium size
     &.is--medium {
         font-size: 1.25rem;
     }
 
-    // Is Large
+    //  Large size
     &.is--large {
         font-size: 1.5rem;
     }
 
-    // Is Primary Link
+    //  Link
     &.is--link {
         background-color: transparent;
         border: none;
@@ -267,17 +295,17 @@ button {
         }
     }
 
-    // Is Rounded
+    //  Rounded style
     &.is--rounded {
         border-radius: 5px;
     }
 
-    // Is Circle
+    //  Circle style
     &.is--circle {
         border-radius: 50px;
     }
 
-    // Is Full
+    //  Full style
     &.is--full {
         width: 100%;
     }

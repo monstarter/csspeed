@@ -1,368 +1,125 @@
-// F O R M   I T E M
-.form__field {
-    display: inline-block;
-    position: relative;
-    width: 100%;
-    margin-bottom: 2.5rem;
-    position: relative;
-    padding-right: 30px;
+// main: ../styles.less
 
 
-    // ICON
-    icon {
-        margin: -2px 5px 0px 0px;
-        font-weight: normal;
-    }
 
+/*  F O R M S
+------------------------------------------------------------------ */
+form {
 
-    // LABEL
-    label {
-        pointer-events: none;
-        font-weight: bold;
-        position: absolute;
-        margin-top: 25px;
-    }
-
-    label,
-    .validate {
-        font-weight: bold;
-        font-size: 13px;
-        display: block;
-        color: #666;
-        .transition;
-    }
-
-
-    // VALIDATE FIELDS
-    .validate {
-        padding: 5px 0px;
-        position: absolute;
-        opacity: 0;
-        pointer-events: none;
-        margin-top:-10px;
-        line-height: 15px;
-    }
-
-
-    // STATES
-
-    // -- Focus State
-    &.form__field--focus {
-
-        label{
-            color: @primary;
-            .translate(0px, -20px);
-        }
-
-        input, select, textarea {
-            color: #666;
-            border-bottom: 1px solid @primary;
-            box-shadow: 0px 1px 0px @primary;
-        }
-
-    }
-
-    // -- Fill State
-    &.form__field--fill {
-
-        label {
-            color: @primary;
-            .translate(0px, -20px);
-        }
-
-        input, select, textarea {
-            color: #333;
-            border-bottom-color: #ccc;
-        }
-
-    }
-
-    // -- Error State
-    &.form__field--error {
-
-        .validate {
-            color: @danger;
-            opacity: 1;
-            .transition;
-            .translate(0px, 12px);
-        }
-
-        label {
-            color: @danger;
-        }
-
-        input,
-        select,
-        textarea {
-            color: @danger;
-            border-bottom: 1px solid @danger;
-            box-shadow: 0px 1px 0px @danger;
-        }
-
-        select {
-            color: #fff;
-        }
-
-    }
-
-    // INPUTS
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    input[type="password"],
-    select,
-    textarea {
-        width: 100%;
-        min-height:35px;
-        margin-top: 20px;
-        font-size: 1rem;
-        border: 0px;
-        outline: none;
-        vertical-align: middle;
-        padding-right: 30px;
-        color: #666;
-        background: transparent;
-        font-family: inherit;
-        border-bottom: 1px solid #e6e6e6;
-
-        .transition;
-        .appearance-none;
-
-        &:disabled {
-            color: #bbb;
-        }
-
-    }
-
+    //  G L O B A L   S T Y L E S
+    input,
+    textarea,
     select {
-        color: #fff;
-        &:focus {
-            color: #666;
-        }
-    }
-
-    textarea {
-        height: 100px;
-        resize: none;
-        padding-top: 10px;
-    }
-
-}
-
-
-
-// Input password
-.input--password {
-
-}
-
-.toggle-password {
-    cursor: pointer;
-
-    &:hover{
-        color: @primary;
-    }
-}
-
-
-
-// IMAGE UPLOAD
-// Crop Image
-.cropit-image-preview {
-    overflow: hidden;
-    position: relative;
-    background-color: #f8f8f8;
-    background-size: cover;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    margin-top: 7px;
-    width: 100%;
-    height: 250px;
-    cursor: move;
-}
-
-
-.crop {
-    width: 250px;
-    height: 250px;
-    background: #f5f5f5 url('../images/backgrounds/crap_area.png') center no-repeat;
-    position: relative;
-    display: inline-block;
-    border-radius: 5px;
-    padding: 10px;
-    .transition;
-    &:hover {
-        background-color: #eee;
-    }
-
-    &:hover .crop__areas{
-        border-color: @primary;
-
-        &:hover .icon {
-            box-shadow: 0px 6px 14px -5px rgba(0,0,0,.3);
-            bottom: 25px;
-        }
-    }
-
-    &--full {
+        padding: 1rem;
+        border: 1px solid #e5e5e5;
+        font-size: inherit;
         width: 100%;
-        max-width: 600px;
+        outline: none;
+        color: #444;
+        font-family: inherit;
+        font-weight: inherit;
+        resize: none;
+        .transition;
+        
+
+        //  MODIFIERS -- STYLE   
+
+        &.is--rounded {
+            border-radius: 5px;
+        }
+
+        &.is--circle {
+            border-radius: 30px;
+            padding: 0 2em;
+        }
+
+        &.is--borderless {
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            margin-bottom: -1px;
+
+            *:last-child {
+                margin-top: 30px;
+            }
+        }
+
+
+        //  MODIFIERS -- SIZE
+        &.is--small {
+            padding: 0.875rem;
+        }
+
+        &.is--large {
+            padding: 1.25rem 1rem;
+        }
+
+
+        //  MODIFIERS -- VALIDATE
+        &.is--success {
+            box-shadow: inset 0px -2px 0px @success;
+            background-color: lighten(@success, 40%)
+        }
+
+        &.is--warning {
+            box-shadow: inset 0px -2px 0px @warning;
+            background-color: lighten(@warning, 45%)
+        }
+
+        &.is--danger {
+            box-shadow: inset 0px -2px 0px @danger;
+            background-color: lighten(@danger, 40%)
+        }
+    }
+
+
+    //  INPUT GROUP
+    .input-group {
+        display: flex;
+
+        * {
+            border-radius: 0px;
+        }
+
+        &.is--circle {
+            border-radius: 50px;
+            overflow: hidden;
+
+            input {
+                border-radius: 50px 0 0 50px;
+                padding: 0 1.5em;
+            }
+
+            button {
+                border-radius: 0 50px 50px 0;
+                padding-left: 1.25em;
+            }
+        }
+
+        &.is--rounded {
+            border-radius: 5px;
+            overflow: hidden;
+
+            input {
+                border-radius: 5px 0 0 5px;
+                padding: 0 1.5em;
+            }
+
+            button {
+                border-radius: 0 5px 5px 0;
+                padding-left: 1.25em;
+            }
+        }
+    }
+
+
+    //  T E X T A R E A
+    textarea {
+        min-height: 120px;
+    }
+
+
+    //  S E L E C T
+    select {
+        height: 49px;
     }
 }
-
-    .cropit-image {
-        &--profile {
-            width: 250px;
-        }
-
-        &--cover{
-            width: 600px;
-        }
-
-        .cropit-image-mask {
-            width: 200px;
-            height: 200px;
-            left: 0;
-            right: 0;
-            top:0;
-            bottom: 0;
-            margin: auto;
-            border-radius: 60%;
-            position: absolute;
-            box-shadow: 0px 0px 0px 100px rgba(255,255,255,.6);
-            display: none;
-        }
-
-        button {
-            position: relative;
-        }
-        .cropit-image-input {
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-    }
-
-    .cropit-zoom {
-        margin: 5px 0px;
-
-        .icon {
-            margin: 0px;
-        }
-
-        .cropit-image-zoom-input {
-            vertical-align: middle;
-            width: 100%;
-        }
-    }
-
-
-
-// Date Picker
-.ui-datepicker {
-    margin-top: 5px;
-    font-size: 14px;
-    background: #fff;
-    box-shadow: 0px 2px 12px rgba(0,0,0,.3);
-    overflow: hidden;
-}
-
-.ui-datepicker table {
-    border-collapse: collapse;
-    padding: 15px;
-}
-
-.ui-datepicker-header {
-    padding: 10px 0px;
-    color: #fff;
-    position: relative;
-    background: @primary;
-}
-
-.ui-datepicker-calendar {
-    margin: 15px;
-}
-
-.ui-datepicker-calendar td,
-.ui-datepicker-calendar th
-{
-    text-align: center;
-}
-
-.ui-datepicker-calendar th {
-    padding: 4px 0px;
-}
-
-.ui-datepicker-calendar td a{
-    width: 36px;
-    display: block;
-    padding: 8px 0px;
-    text-decoration: none;
-    color: #999;
-    .transition;
-}
-
-.ui-datepicker-calendar td:hover a {
-    background: #eee;
-    display: block;
-    border-radius: 50%;
-}
-
-.ui-state-active {
-    background: #eee;
-    color: @primary;
-    display: block;
-    border-radius: 50%;
-}
-
-.ui-datepicker-today > a {
-    color: @primary !important;
-    display: block;
-    font-weight: bold;
-}
-
-.ui-datepicker-title {
-    text-transform: uppercase;
-    text-align: center;
-}
-
-.ui-datepicker-next,
-.ui-datepicker-prev
-{
-    color: #fff;
-    position: absolute;
-    padding: 10px 5px;
-    top: 0px;
-    background: @primary;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.ui-datepicker-prev { left: 0px; }
-.ui-datepicker-next { right: 0px; }
-
-.ui-datepicker-prev:hover,
-.ui-datepicker-next:hover
-{
-    text-decoration: none;
-    color: #fff;
-    background: lighten(@primary, 10%);
-}
-
-.ui-datepicker select {
-    background: none;
-    border: none;
-    outline: none;
-    color: #fff;
-    padding: 5px;
-    text-transform: uppercase;
-    .appearance-none;
-}
-
-    .ui-datepicker select:focus {
-        color: #666;
-        background: #fff;
-    }

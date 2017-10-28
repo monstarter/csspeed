@@ -1,88 +1,122 @@
-/*==============================================*\
-	# GRID SYSTEM
-\*==============================================*/
+// main: ../styles.less
+
+
+
+/*  G R I D
+------------------------------------------------------------------ */
 
 // Total columns in the grid
 @columns: 12;
 
+// C O L U M N S
+row {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    -webkit-box-flex: 0;
+    flex: 0 1 auto;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: -5px;
 
-columns {
-	display: flex;
-  	margin-left: -5px;
-  	margin-right: -5px;
-  	margin-top: -5px;
 
-  	// Modifiers
-  	&.is--center {
-    	justify-content: center;
-	}
+    // MODIFIERS
+    &.is--center {
+        justify-content: center;
+    }
 
-  	&.is--collapsed {
-	    margin-left: 0;
-	    margin-right: 0;
-	    margin-top: 0;
-	}
+    &.is--collapsed {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+    }
 
     &:last-child {
-      	margin-bottom: 0;
-	}
+        margin-bottom: 0;
+    }
 
     &:not(:last-child) {
-      	margin-bottom: 5px;
-	}
+        margin-bottom: 5px;
+    }
 
 }
 
+// C O L U M N
 column {
-  	-webkit-box-flex: 1;
-  	-webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    -ms-flex-preferred-size: 0;
+    -webkit-flex-basis: 0;
+    flex-basis: 0;
+    max-width: 100%;
     padding: 5px;
 
-	// Mobile columns
-	.for( @columns ); .each( @column ) {
-		&.mobile--@{column} {
-			width: ( @column / @columns * 100% );
-			-webkit-box-flex: 0;
-		    -webkit-flex: none;
-		    -ms-flex: none;
-		    flex: none;
-		}
-		&.mobile--@{column}.offset {
-			margin-left: 100% - ( @column / @columns ) * 100%;
-		}
-	}
 
-	// Tablet columns
-	@media @tablet {
-		.for( @columns ); .each( @column ) {
-			&.tablet--@{column} {
-				width: ( @column / @columns * 100% );
-				-webkit-box-flex: 0;
-			    -webkit-flex: none;
-			    -ms-flex: none;
-			    flex: none;
-			}
-			&.tablet--@{column}.offset {
-				margin-left: 100% - ( @column / @columns ) * 100%;
-			}
-		}
-	}
+    // MODIFIERS
 
-	// Desktop columns
-	@media @desktop {
-		.for( @columns ); .each( @column ) {
-			&.desktop--@{column} {
-				width: ( @column / @columns * 100% );
-				-webkit-box-flex: 0;
-			    -webkit-flex: none;
-			    -ms-flex: none;
-			    flex: none;
-			}
-			&.desktop--@{column}.offset {
-				margin-left: 100% - ( @column / @columns ) * 100%;
-			}
-		}
-	}
+    &.is--reverse {
+        -webkit-flex-direction: row-reverse;
+        -ms-flex-direction: row-reverse;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+        flex-direction: row-reverse;
+    }
+
+    // Mobile
+    .for( @columns ); .each( @column ) {
+        &.mobile--@{column} {
+            -ms-flex-preferred-size: ( @column / @columns * 100% );
+            -webkit-flex-basis: ( @column / @columns * 100% );
+            flex-basis: ( @column / @columns * 100% );
+            max-width: ( @column / @columns * 100% );
+        }
+        &.mobile--@{column}.is--offset {
+            margin-left: 100% - ( @column / @columns ) * 100%;
+        }
+    }
+
+    // Tablet
+    @media @tablet {
+        .for( @columns ); .each( @column ) {
+            &.tablet--@{column} {
+                -ms-flex-preferred-size: ( @column / @columns * 100% );
+                -webkit-flex-basis: ( @column / @columns * 100% );
+                flex-basis: ( @column / @columns * 100% );
+                max-width: ( @column / @columns * 100% );
+            }
+            &.tablet--@{column}.is--offset {
+                margin-left: 100% - ( @column / @columns ) * 100%;
+            }
+        }
+    }
+
+    // Desktop
+    @media @desktop {
+        .for( @columns ); .each( @column ) {
+            &.desktop--@{column} {
+                -ms-flex-preferred-size: ( @column / @columns * 100% );
+                -webkit-flex-basis: ( @column / @columns * 100% );
+                flex-basis: ( @column / @columns * 100% );
+                max-width: ( @column / @columns * 100% );
+            }
+            &.desktop--@{column}.is--offset {
+                margin-left: 100% - ( @column / @columns ) * 100%;
+            }
+        }
+    }
 }
